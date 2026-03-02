@@ -17,11 +17,14 @@ connectCloudinary();
 
 // Middlewares
 app.use(express.json());
-// app.use(cors());
-app.use(cors({
-  origin: ["https://paksolaris.vercel.app", "http://localhost:5173"],
-  credentials: true
-}));
+app.use(cors());
+// const cors = require('cors');
+
+// app.use(cors({
+//   origin: ["http://localhost:5173", "https://aapka-frontend-url.vercel.app"],
+//   methods: ["GET", "POST", "PUT", "DELETE"],
+//   credentials: true
+// }));
 
 // API Endpoints
 app.use('/api/user', userRouter);
