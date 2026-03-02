@@ -17,8 +17,11 @@ connectCloudinary();
 
 // Middlewares
 app.use(express.json());
-app.use(cors());
-
+// app.use(cors());
+app.use(cors({
+  origin: "https://paksolaris.vercel.app",
+  credentials: true
+}));
 
 // API Endpoints
 app.use('/api/user', userRouter);
