@@ -21,7 +21,7 @@ const Footer = () => {
                 <div>
                     <p className="text-xl font-medium mb-5">GET IN TOUCH</p>
                     <ul className="flex flex-col gap-1 text-gray-600">
-                        <li>+92 nill</li><li>paksolariss@gmail.com</li>
+                        <li>+92 334 2433361  </li><li>paksolariss@gmail.com</li>
                         {/* <a href='https://www.google.com/maps/place/Hira+%26+Company/@24.8238674,67.1412639,17z/data=!3m1!4b1!4m6!3m5!1s0x3eb33b05321baeb3:0x9ca12f038799d8c5!8m2!3d24.8238674!4d67.1412639!16s%2Fg%2F11qsw2ng09?entry=ttu&g_ep=EgoyMDI1MDMxMi4wIKXMDSoASAFQAw%3D%3D' className="mt-6 cursor-pointer">Touch and Get the Location</a> */}
                     </ul>
                 </div>
