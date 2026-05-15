@@ -53,7 +53,7 @@ const Product = () => {
               <img key={i} src={assets.star_icon} alt='star' className='w-3.5' />
             ))}
             <img src={assets.star_dull_icon} alt='star dull' className='w-3.5' />
-            <p className='pl-2'>(122)</p>
+            <p className='pl-2'>(43)</p>
           </div>
           <p className='mt-5 text-3xl font-medium'>{currency}{productData.price}</p>
           <p className='mt-5 text-gray-500 md:w-4/5'>{productData.description}</p>
@@ -86,4 +86,4 @@ const Product = () => {
   ) : <div className='opacity-0'></div>;
 };
 
-export default Product;
+export default Product; 

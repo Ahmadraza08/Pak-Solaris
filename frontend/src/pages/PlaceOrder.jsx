@@ -90,18 +90,26 @@ const PlaceOrder = () => {
           <div className="bg-white rounded-lg p-4 shadow-sm border-l-4 border-black hover:shadow-md transition duration-200">
             <div className="flex items-center mb-3">
               <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center mr-3">
-                <span className="text-white font-bold text-sm">MB</span>
+                <span className="text-white font-bold text-sm">DIB</span>
               </div>
-              <h4 className="text-lg font-semibold">Meezan Bank</h4>
+              <h4 className="text-lg font-semibold">DUBAI ISLAMIC Bank</h4>
             </div>
             <div className="space-y-2 text-sm">
               <div className="flex justify-between">
-                <span className="text-gray-500">Account Title:</span>
-                <span className="font-medium">SUNNY ELECTRONICS</span>
+                <span className="text-gray-500">ACCOUNT Title:</span>
+                <span className="font-medium">PAK SOLARIS</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-500">Account Number:</span>
-                <span className="font-medium">0189-0105709390</span>
+                <span className="text-gray-500">ACCOUNT Number:</span>
+                <span className="font-medium">425512002</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-500">ACCOUNT IBAN:</span>
+                <span className="font-medium">PK17DUIB0000000425512002</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-500">BRANCH CODE:</span>
+                <span className="font-medium">0127</span>
               </div>
             </div>
           </div>
