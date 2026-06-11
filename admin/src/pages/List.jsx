@@ -92,7 +92,7 @@ const List = ({token}) => {
   const fetchList = async () => {
     try {
       // NOTE: Yahan '/api/product/list' se hatakar 'api/product/list' kiya hai taake double slash na bane
-      const response = await axios.get(backendUrl + 'api/product/list')
+      const response = await axios.get(backendUrl + '/api/product/list')
       if (response.data.success) {
         setList(response.data.products)
       } else {
