@@ -74,12 +74,14 @@
 //   )
 // }
 
-// export default List
-import React, { useEffect, useState } from 'react'
-import { backendUrl } from '../App'
+// export default Listimport React, { useEffect, useState } from 'react'
+import { backendUrl as rawBackendUrl } from '../App'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 import { currency } from '../App'
+
+// Pukka bandobast: Yeh line ensure karegi ke URL ke end mein kabhi bhi trailing slash na ho
+const backendUrl = rawBackendUrl ? rawBackendUrl.replace(/\/$/, '') : '';
 
 const List = ({token}) => {
 
@@ -91,8 +93,8 @@ const List = ({token}) => {
 
   const fetchList = async () => {
     try {
-      // NOTE: Yahan '/api/product/list' se hatakar 'api/product/list' kiya hai taake double slash na bane
-      const response = await axios.get(backendUrl + '/api/product/list')
+      // Hamesha single slash ke sath perfect chalega
+      const response = await axios.get(`${backendUrl}/api/product/list`)
       if (response.data.success) {
         setList(response.data.products)
       } else {
@@ -106,8 +108,7 @@ const List = ({token}) => {
 
   const removeProduct = async (id) => {
     try {
-      // NOTE: Yahan bhi slash hata diya hai
-      const response = await axios.post(backendUrl + 'api/product/remove', {id}, {headers: {token}})
+      const response = await axios.post(`${backendUrl}/api/product/remove`, {id}, {headers: {token}})
       if (response.data.success) {
         toast.success(response.data.message)
         await fetchList()
@@ -128,9 +129,8 @@ const List = ({token}) => {
     }
 
     try {
-      // FIX: Yahan pehle '/api/product/update-price' tha, ab 'api/product/update-price' kar diya hai
       const response = await axios.post(
-        backendUrl + 'api/product/update-price', 
+        `${backendUrl}/api/product/update-price`, 
         { id, price: parseFloat(newPrice) }, 
         { headers: { token } }
       )
