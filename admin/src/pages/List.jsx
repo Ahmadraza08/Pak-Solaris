@@ -75,14 +75,16 @@
 // }
 
 // export default Listimport React, { useEffect, useState } from 'react'
-import { backendUrl as rawBackendUrl } from '../App'
+import React, { useEffect, useState } from 'react'
+// Upar se { backendUrl } ko nikal dein, sirf currency rehne dein:
+import { currency } from '../App' 
 import axios from 'axios'
 import { toast } from 'react-toastify'
-import { currency } from '../App'
 
-// Pukka bandobast: Yeh line ensure karegi ke URL ke end mein kabhi bhi trailing slash na ho
-const backendUrl = rawBackendUrl ? rawBackendUrl.replace(/\/$/, '') : '';
-
+// DIRECT LIVE ENV VARIABLE KO YAHAN CLEAN KAREIN (Kahin aur se import karne ki zaroorat nahi):
+const backendUrl = import.meta.env.VITE_BACKEND_URL 
+  ? import.meta.env.VITE_BACKEND_URL.replace(/\/$/, '') 
+  : '';
 const List = ({token}) => {
 
   const [list, setList] = useState([])
